@@ -1,29 +1,13 @@
 <h1>Dashboard</h1>
 
+<% @projects.each do |p| %>
 <div class="row">
-<div class="col-3">
-  <img src="http://oi40.tinypic.com/vdgwnb.jpg">
-</div>
-<div class="col-8">
-  <h3><a href="/projects/12">Project Title</a></h3>
-  <p>Project description here..</p>
+  <div class="col-3">
+    <img src="http://oi40.tinypic.com/vdgwnb.jpg">
+  </div>
+  <div class="col-8">
+    <h3><a href="/projects/12"><%= p.title %></a></h3>
+    <p><%= p.description %></p>
   </div>
 </div>
-<div class="row">
-<div class="col-3">
-  <img src="http://oi40.tinypic.com/vdgwnb.jpg">
-</div>
-<div class="col-8">
-  <h3><a href="/projects/12">Project Title</a></h3>
-  <p>Project description here..</p>
-  </div>
-</div>
-<div class="row">
-<div class="col-3">
-  <img src="http://oi40.tinypic.com/vdgwnb.jpg">
-</div>
-<div class="col-8">
-  <h3><a href="/projects/12">Project Title</a></h3>
-  <p>Project description here..</p>
-  </div>
-</div>
+<% end %>

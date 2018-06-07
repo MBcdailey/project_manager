@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   root 'dashboard#index'
   post '/new' => 'dashboard#new'
   get '/projects/:id' => 'dashboard#projects'
