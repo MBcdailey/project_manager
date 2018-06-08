@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     @p = Project.find(params[:id])
   end
   def update
-    Project.update(project_params)
+    Project.find(params[:id]).update(project_params)
     redirect_to project_path params[:id]
   end
   def create
