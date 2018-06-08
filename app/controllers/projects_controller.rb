@@ -5,6 +5,13 @@ class ProjectsController < ApplicationController
   def show
     @p = Project.find(params[:id])
   end
+  def edit
+    @p = Project.find(params[:id])
+  end
+  def update
+    Project.update(project_params)
+    redirect_to project_path params[:id]
+  end
   def create
     Project.create(project_params)
     redirect_to root_path

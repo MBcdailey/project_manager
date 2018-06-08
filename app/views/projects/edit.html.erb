@@ -1,0 +1,15 @@
+
+<%= form_for :project, url: "/projects/#{@p.id}", method: "put", html: { class: 'form-horizontal'} do %>
+  <div class="form-group">
+	<label for="formGroupExampleInput">Title</label>
+	<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example project" name="title" value="<%= @p.title %>" required>
+  </div>
+  <div class="form-group">
+	<label for="formGroupExampleInput2">Description</label>
+	<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Example description.." name="description" value="<%= @p.description %>">
+  </div>
+  <div class="form-group">
+	<button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onclick="location.href = '<%= project_path @p.id %>'">Cancel</button>
+	<button type="submit" class="btn btn-outline-info">Save changes</button>
+  </div>
+<% end %>
