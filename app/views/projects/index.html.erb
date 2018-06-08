@@ -1,10 +1,8 @@
 <div class="row header-row px-5 py-5">
-  <div class="col-12">
-    <h1>Dashboard</h1>
-  </div>
+  <h1>Dashboard</h1>
 </div>
 
-<% @projects.each do |p| %>
+<% @projects.order(created_at: :desc).each do |p| %>
 <div class="row project-row px-5 py-3">
   <div class="col-12">
     <h3><a href="<%= project_path(p.id)%>"><%= p.title %></a></h3>

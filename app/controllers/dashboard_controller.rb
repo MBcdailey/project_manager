@@ -1,9 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @projects = Project.all
-  end
-  
-  def new
-    redirect_to root_path
+    @projects = Project.order(created_at: :desc)
   end
 end
