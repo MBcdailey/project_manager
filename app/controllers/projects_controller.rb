@@ -3,10 +3,10 @@ class ProjectsController < ApplicationController
     @projects = Project.order(created_at: :desc)
   end
   def show
-    @p = Project.find(params[:id])
+    @project = Project.find(params[:id])
   end
   def edit
-    @p = Project.find(params[:id])
+    @project = Project.find(params[:id])
   end
   def update
     Project.find(params[:id]).update(project_params)
