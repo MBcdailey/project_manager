@@ -18,8 +18,8 @@ class ProjectsController < ApplicationController
   end
   
   def create
-    project_save true
-    redirect_to root_path
+    @project = project_save true
+    redirect_to @project
   end
   
   private
