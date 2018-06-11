@@ -1,25 +1,43 @@
 class ProjectsController < ApplicationController
+
   def index
-    @projects = Project.order(created_at: :desc)
+    project_list
   end
+  
   def show
-    @project = Project.find(params[:id])
+    project_find
   end
+  
   def edit
-    @project = Project.find(params[:id])
+    project_find
   end
+  
   def update
-    Project.find(params[:id]).update(project_params)
-    redirect_to project_path params[:id]
+    project_save
+    redirect_to project_path
   end
+  
   def create
-    Project.create(project_params)
+    project_save true
     redirect_to root_path
   end
   
   private
   
   def project_params
-    params.permit(:title, :description)
+    params.require(:project).permit(:title, :description)
   end
+  
+  def project_find
+    @project = Project.find(params[:id])
+  end
+  
+  def project_list
+    @projects = Project.order(created_at: :desc)
+  end
+  
+  def project_save(new = false)
+    new ? Project.create(project_params) : Project.find(params[:id]).update(project_params)
+  end
+  
 end

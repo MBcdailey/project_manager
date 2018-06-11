@@ -11,11 +11,11 @@
         <%= form_for :project, url: '/projects', html: { class: 'form-horizontal'} do %>
 		  <div class="form-group">
 			<label for="formGroupExampleInput">Title</label>
-			<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example project" name="title" required>
+			<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example project" name="project[title]" required>
 		  </div>
 		  <div class="form-group">
 			<label for="formGroupExampleInput2">Description</label>
-			<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Example description.." name="description">
+			<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Example description.." name="project[description]">
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
