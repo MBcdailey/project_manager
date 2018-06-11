@@ -36,8 +36,8 @@ class ProjectsController < ApplicationController
     @projects = Project.order(created_at: :desc)
   end
   
-  def project_save(new = false)
-    new ? Project.create(project_params) : Project.find(params[:id]).update(project_params)
+  def project_save(create_new = false)
+    create_new ? Project.create(project_params) : Project.find(params[:id]).update(project_params)
   end
   
 end
