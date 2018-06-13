@@ -13,13 +13,16 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    project_save
-    redirect_to project_path
+    redirect_to project_save
   end
   
   def create
-    project = project_save true
-    redirect_to project
+    redirect_to project_save true
+  end
+  
+  def destroy
+    project_destroy
+    redirect_to projects_path
   end
   
   private
@@ -38,6 +41,10 @@ class ProjectsController < ApplicationController
   
   def project_save(create_new = false)
     create_new ? Project.create(project_params) : Project.find(params[:id]).update(project_params)
+  end
+  
+  def project_destroy
+    Project.find(params[:id]).destroy
   end
   
 end
