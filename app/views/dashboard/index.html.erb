@@ -1,17 +1,21 @@
-<div class="row header-row px-5 py-5">
+<nav class="navbar justify-content-end navbar-dark bg-dark">
+  <form>
+  </form>
+</nav>
+<div class="row header-row px-3 py-3 mb-5">
   <div class="col-12">
     <h1>Dashboard</h1>
   </div>
 </div>
 <!-- RECENT PROJECTS -->
-<div class="row header-row px-5 py-3">
+<div class="row header-row px-3 py-3">
   <div class="col-12">
     <h2>Recent Projects</h2>
   </div>
 </div>
 <% @projects.each do |project| %>
-<div class="row project-row px-5 py-3">
-  <div class="col-12">
+<div class="row project-row px-3 py-3">
+  <div class="col-12 py-2 border-bottom">
     <h3><a href="<%= project_path(project.id)%>"><%= project.title %></a></h3>
     <p><%= project.description %></p>
     <p>Created: <%= format_date_time(project.created_at) %></p>
