@@ -1,0 +1,19 @@
+<nav class="navbar justify-content-end navbar-dark bg-dark">
+  <form>
+    <button class="btn btn-outline-info" type="button" onclick="location.href = '<%= edit_task_path @task.id %>';">
+      <span class="oi oi-wrench" title="Edit task" aria-hidden="true"></span>
+    </button>
+    <button class="btn btn-outline-info" type="button" onclick="location.href = '<%= tasks_path %>';">
+      <span class="oi oi-x" title="Exit task" aria-hidden="true"></span>
+    </button>
+  </form>
+</nav>
+<div class="row header-row px-3 pt-3 pb-5">
+  <div class="col-10">
+    <h1><%= @task.title %></h1>
+    <p><%= @task.description %></p>
+  </div>
+  <div class="col-2">
+    <p>..</p>
+  </div>
+</div>
