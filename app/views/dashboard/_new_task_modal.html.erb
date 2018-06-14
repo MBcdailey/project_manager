@@ -17,6 +17,14 @@
 			<label for="formGroupExampleInput2">Description</label>
 			<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Example description.." name="task[description]">
 		  </div>
+		  <div class="form-group">
+			<label for="formGroupExampleInput2">Project</label>
+			<select class="form-control" name="task[project_id]">
+			  <% Project.order(created_at: :desc).each do |project| %>
+              <option value="<%= project.id %>"><%= project.title %></option>
+              <% end %>
+            </select>
+		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
 			<button type="submit" class="btn btn-outline-info">Save changes</button>
