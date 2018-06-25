@@ -15,7 +15,7 @@
 </div>
 
 <% @tasks.each do |task| %>
-<div class="row task-row px-3 py-3">
+<div class="row task-row px-3 pb-3">
   <div class="col-12 py-2 border-bottom">
     <h3><a href="<%= task_path(task.id)%>"><%= task.title %></a></h3>
     <p><%= task.description %></p>
