@@ -40,7 +40,7 @@ class TasksController < ApplicationController
     @tasks = Task.order(created_at: :desc)
   end
   
-  def task_save
+  def task_save(create_new = false)
     create_new ? Task.create(task_params) : task_update
   end
   
