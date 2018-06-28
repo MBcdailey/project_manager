@@ -40,7 +40,13 @@ class ProjectsController < ApplicationController
   end
   
   def project_save(create_new = false)
-    create_new ? Project.create(project_params) : Project.find(params[:id]).update(project_params)
+    create_new ? Project.create(project_params) : project_update
+  end
+  
+  def project_update
+    project_tmp = Project.find(params[:id])
+    project_tmp.update(project_params)
+    project_tmp
   end
   
   def project_destroy
