@@ -60,7 +60,7 @@
       <div class="col-12 py-2 border-bottom">
         <h3><a href="<%= task_path(task.id)%>"><%= task.title %></a></h3>
         <p><%= task.description %></p>
-        <p class="small">Created: <%= format_date_time(task.created_at) %></p>
+        <p class="small"><%= "Due: #{format_due_date(task.due_date)}" if !task.due_date.nil? %>, Created: <%= format_date_time(task.created_at) %></p>
       </div>
     </div>
     <% end %>
