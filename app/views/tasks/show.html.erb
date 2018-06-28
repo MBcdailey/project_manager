@@ -13,6 +13,7 @@
     <span class="x-small"><a href="<%= project_path @project.id %>"><%= @project.title %></a></span>
     <h1><%= @task.title %></h1>
     <p><%= @task.description %></p>
+    <p class="small"><%= "Due: #{format_due_date(@task.due_date)}" if !@task.due_date.nil? %>, Created: <%= format_date_time(@task.created_at) %></p>
   </div>
   <div class="col-2">
     <p>..</p>

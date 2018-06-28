@@ -28,7 +28,7 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:title, :description, :project_id)
+    params.require(:task).permit(:title, :description, :project_id, :due_date)
   end
   
   def task_find
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   def task_update
     task_tmp = Task.find(params[:id])
     task_tmp.update(task_params)
-    task_tmpdd
+    task_tmp
   end
   
   def task_destroy
