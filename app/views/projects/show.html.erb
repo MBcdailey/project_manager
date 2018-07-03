@@ -22,12 +22,27 @@
 	<h2>Recent Tasks</h2>
   </div>
 </div>
-<% @project.tasks.each do |task| %>
-<div class="row panel-row px-3 pb-3">
+<div class="row task-row px-3 pb-3">
   <div class="col-12 py-2 border-bottom">
-	<h3><a href="<%= task_path(task.id)%>"><%= task.title %></a></h3>
-	<p><%= task.description %></p>
-	<p class="small"><%= "Due: #{format_due_date(task.due_date)}" if !task.due_date.nil? %>, Created: <%= format_date_time(task.created_at) %></p>
+    <table class="table">
+      <thead>
+        <tr>
+        <th scope="col">Status</th>
+        <th scope="col">Task</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Created Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @project.tasks.each do |task| %>
+        <tr>
+        <th scope="row">Unassigned</th>
+        <td><h3><a href="<%= task_path(task.id)%>"><%= task.title %></a></h3><p><%= task.description %></p></td>
+        <td><%= "#{format_due_date(task.due_date)}" if !task.due_date.nil? %></td>
+        <td><%= format_date_time(task.created_at) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
-<% end %>
