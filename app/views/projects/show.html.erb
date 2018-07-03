@@ -29,6 +29,7 @@
         <tr>
         <th scope="col">Status</th>
         <th scope="col">Task</th>
+        <th scope="col">Assigned To</th>
         <th scope="col">Due Date</th>
         <th scope="col">Created Date</th>
         </tr>
@@ -36,8 +37,9 @@
       <tbody>
         <% @project.tasks.each do |task| %>
         <tr>
-        <th scope="row">Unassigned</th>
+        <th scope="row">Backlog</th>
         <td><h3><a href="<%= task_path(task.id)%>"><%= task.title %></a></h3><p><%= task.description %></p></td>
+        <td>No one</td>
         <td><%= "#{format_due_date(task.due_date)}" if !task.due_date.nil? %></td>
         <td><%= format_date_time(task.created_at) %></td>
         </tr>
