@@ -28,7 +28,8 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:title, :description, :project_id, :due_date)
+    params[:task][:is_complete] = params[:task][:is_complete].nil? ? "off" : params[:task][:is_complete]
+    params.require(:task).permit(:title, :description, :project_id, :due_date, :is_complete)
   end
   
   def task_find

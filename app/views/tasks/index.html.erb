@@ -29,7 +29,7 @@
       <tbody>
         <% @tasks.each do |task| %>
         <tr>
-        <th scope="row">Backlog</th>
+        <th scope="row"><%= get_status(task) %></th>
         <td><h3><a href="<%= task_path(task.id)%>"><%= task.title %></a></h3><p><%= task.description %></p></td>
         <td><a href="<%= project_path task.project_id %>"><%= task.project_id %></a></td>
         <td>No One</td>
