@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :task_statuses
   resources :tasks
   resources :projects
   root 'dashboard#index'

@@ -2,7 +2,6 @@ class TasksController < ApplicationController
 
   def index
     task_list
-    task_settings
   end
   
   def show
@@ -39,10 +38,6 @@ class TasksController < ApplicationController
   
   def task_list
     @tasks = Task.order(created_at: :desc)
-  end
-  
-  def task_settings
-    @task_statuses = TaskStatus.order(created_at: :desc)
   end
   
   def task_save(create_new = false)

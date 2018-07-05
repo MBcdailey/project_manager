@@ -3,9 +3,6 @@
     <button class="btn btn-outline-info" type="button" data-toggle="modal" data-target="#newTaskModal">
       <span class="oi oi-plus" title="New task" aria-hidden="true"></span>
     </button>
-    <button class="btn btn-outline-info" type="button" data-toggle="modal" data-target="#newTaskStatusModal">
-      <span class="oi oi-wrench" title="Configure Task Settings" aria-hidden="true"></span>
-    </button>
     <button class="btn btn-outline-info" type="button" onclick="location.href = '<%= root_path %>';">
       <span class="oi oi-x" title="Exit Task List" aria-hidden="true"></span>
     </button>
@@ -44,6 +41,3 @@
     </table>
   </div>
 </div>
-
-
-<%= render 'dashboard/new_task_status_modal.html.erb' %>
